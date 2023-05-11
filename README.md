@@ -4,9 +4,9 @@
 
 ### XML là gì:
 
-XML (Extensible Markup Language) là một ngôn ngữ đánh dấu dựa trên văn bản được sử dụng để lưu trữ và truyền dữ liệu có cấu trúc. Nó là một công nghệ chung cho việc trao đổi dữ liệu giữa các hệ thống khác nhau và được sử dụng rộng rãi trong ứng dụng web.
+`XML (Extensible Markup Language)` là một ngôn ngữ đánh dấu dựa trên văn bản được sử dụng để lưu trữ và truyền dữ liệu có cấu trúc. Nó là một công nghệ chung cho việc trao đổi dữ liệu giữa các hệ thống khác nhau và được sử dụng rộng rãi trong ứng dụng web.
 
-XML sử dụng các thẻ đánh dấu để xác định cấu trúc và nội dung của dữ liệu. Mỗi thẻ bắt đầu bằng một ký tự "<" và kết thúc bằng ký tự ">". Thẻ có thể chứa văn bản hoặc các thẻ con bên trong nó. Dữ liệu trong XML được tổ chức thành cây phân cấp, trong đó các thẻ cha chứa các thẻ con và các thẻ con có thể chứa các thẻ khác.
+XML sử dụng các thẻ đánh dấu để xác định cấu trúc và nội dung của dữ liệu. Mỗi thẻ bắt đầu bằng một ký tự `"<"` và kết thúc bằng ký tự `">"`. Thẻ có thể chứa văn bản hoặc các thẻ con bên trong nó. Dữ liệu trong XML được tổ chức thành cây phân cấp, trong đó các thẻ cha chứa các thẻ con và các thẻ con có thể chứa các thẻ khác.
 
 ```
 <person>
@@ -16,7 +16,7 @@ XML sử dụng các thẻ đánh dấu để xác định cấu trúc và nội
 </person>
 ```
 
-Trong ví dụ trên, chúng ta có một phần tử <person> chứa ba phần tử con là <name>, <age>, và <email>. Mỗi phần tử con chứa dữ liệu tương ứng, chẳng hạn <name> chứa "John Doe", <age> chứa "30", và <email> chứa "john@example.com".
+Trong ví dụ trên, chúng ta có một phần tử `<person>` chứa ba phần tử con là `<name>`, `<age>`, và `<email>`. Mỗi phần tử con chứa dữ liệu tương ứng, chẳng hạn `<name>` chứa `John Doe`, `<age>` chứa `30`, và `<email>` chứa `john@example.com`.
 
 XML cho phép người dùng tự định nghĩa các thẻ và cấu trúc dữ liệu phù hợp với nhu cầu của họ. Điều này giúp việc truyền và lưu trữ dữ liệu linh hoạt hơn và dễ dàng cho việc tương tác giữa các hệ thống khác nhau.
 
@@ -33,7 +33,7 @@ Ví dụ về khai báo một thực thể ngoại vi trong DTD:
   <!ENTITY externalEntity SYSTEM "http://example.com/data.xml">
 ]>
 ```
-Trong ví dụ trên, externalEntity là tên của thực thể ngoại vi và http://example.com/data.xml là định danh hệ thống. Thực thể ngoại vi này tham chiếu đến tài liệu XML tại URL http://example.com/data.xml.
+Trong ví dụ trên, externalEntity là tên của thực thể ngoại vi và `http://example.com/data.xml` là định danh hệ thống. Thực thể ngoại vi này tham chiếu đến tài liệu XML tại URL `http://example.com/data.xml`.
 
 Thực thể ngoại vi trong XML có thể được sử dụng để chèn dữ liệu từ các nguồn bên ngoài vào tài liệu XML, nhưng cũng có thể gây ra các rủi ro bảo mật nếu không được xử lý đúng cách, như trong trường hợp của lỗ hổng XML External Entity (XXE) Injection.
 
