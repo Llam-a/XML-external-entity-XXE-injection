@@ -96,6 +96,8 @@ Ngoài ra còn có:
   
   - Exploiting blind XXE to retrieve data via error messages, trong đó kẻ tấn công có thể kích hoạt một thông báo lỗi phân tích chứa dữ liệu nhạy cảm.
   
+  - Exploiting XXE to perform SSRF attacks,trong đó một thực thể ngoại vi được định nghĩa dựa trên một URL trỏ tới hệ thống backend.
+
 ## Làm thế nào để tìm và kiểm tra các lỗ hổng XXE (XML External Entity) vulnerabilities?
 
 Để tìm và kiểm tra các lỗ hổng XXE, bạn có thể tuân theo các bước sau:
