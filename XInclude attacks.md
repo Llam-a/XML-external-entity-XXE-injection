@@ -15,4 +15,4 @@ Cuộc tấn công XInclude đề cập đến một lỗ hổng bảo mật khi
 
 Trong cuộc tấn công XInclude, kẻ tấn công thường tạo một tài liệu XML độc hại hoặc đầu vào được thiết kế để khai thác tính năng XInclude để bao gồm nội dung không được ủy quyền hoặc không mong đợi. Mục tiêu thường là lấy thông tin nhạy cảm hoặc thực thi mã tùy ý phía máy chủ.
 
-Thực hành ở đây
+Thực hành [ở đây](https://github.com/Llam-a/XML-external-entity-XXE-injection/blob/main/Exercises/Lab%3A%20Exploiting%20XInclude%20to%20retrieve%20files.md).
