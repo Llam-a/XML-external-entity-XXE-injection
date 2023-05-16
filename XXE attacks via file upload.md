@@ -21,4 +21,4 @@ Một số ứng dụng cho phép người dùng tải lên tệp tin được x
 
 Ví dụ, một ứng dụng có thể cho phép người dùng tải lên hình ảnh và xử lý hoặc xác nhận chúng trên máy chủ sau khi chúng được tải lên. Ngay cả khi ứng dụng mong đợi nhận định dạng như PNG hoặc JPEG, thư viện xử lý hình ảnh đang được sử dụng có thể hỗ trợ các hình ảnh SVG. Vì định dạng SVG sử dụng XML, một kẻ tấn công có thể gửi một hình ảnh SVG độc hại và vượt qua các điểm yếu XXE ẩn.
 
-Thực hành ở đây.
+Thực hành [ở đây](https://github.com/Llam-a/XML-external-entity-XXE-injection/blob/main/Exercises/Lab%3A%20Exploiting%20XXE%20via%20image%20file%20upload.md).
