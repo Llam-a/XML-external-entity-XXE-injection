@@ -1,5 +1,13 @@
 # Tấn công XXE thông qua file upload
 
+## Overview:
+
+Một số ứng dụng cho phép người dùng tải lên các tập tin được xử lý phía máy chủ. Một số định dạng tập tin phổ biến sử dụng XML hoặc chứa các thành phần con XML. Ví dụ về các định dạng dựa trên XML là định dạng tài liệu văn phòng như DOCX và định dạng hình ảnh như SVG.
+
+Ví dụ, một ứng dụng có thể cho phép người dùng tải lên hình ảnh và xử lý hoặc xác thực chúng trên máy chủ sau khi tải lên. Ngay cả khi ứng dụng mong đợi nhận định dạng như PNG hoặc JPEG, thư viện xử lý hình ảnh đang được sử dụng có thể hỗ trợ hình ảnh SVG. Vì định dạng SVG sử dụng XML, một kẻ tấn công có thể gửi một hình ảnh SVG độc hại và tận dụng các lỗ hổng XXE ẩn trong đó.
+
+## Example:
+
 Một phương pháp khác để tấn công XXE là thông qua việc upload file. Khi ứng dụng cho phép người dùng tải lên các tệp XML và sau đó xử lý chúng, việc tải lên tệp có thể tạo ra các điểm yếu XXE.
 
 Để thực hiện tấn công XXE thông qua tải lên tệp, bạn cần tạo một tệp XML chứa các thực thể bên ngoài và sử dụng đường dẫn đến tệp trên máy chủ để khai thác. Dưới đây là một ví dụ về cách thực hiện tấn công XXE thông qua tải lên tệp:
